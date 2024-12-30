@@ -41,7 +41,7 @@ class TranslationChain:
             if self.model:
                 prompt = (
                     """You are a translation expert, proficient in various languages. \n
-                    Translates {source_language} to {target_language}."""
+                    Translates {source_language} to {target_language}.\nText: {text}"""
                 )
                 result, history = self.model.chat(tokenizer, prompt, max_length=2048, history=[])
             elif self.chain:
